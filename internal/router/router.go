@@ -16,6 +16,7 @@ func InitRouter(r *gin.Engine) {
 	group := r.Group("/douyin", middleware.JWTAuth())
 	{
 		group.GET("/user/", controllers.GetUserInfo)
+		group.POST("/publish/action/", controllers.Publish)
 
 	}
 

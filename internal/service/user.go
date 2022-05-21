@@ -17,7 +17,7 @@ func init() {
 func Register(username string, password string, res *response.Response) (err error) {
 	salt, err := secure.HashAndSalt(password)
 
-	account := user.Account{Username: username, Password: string(salt)}
+	account := model.Account{Username: username, Password: string(salt)}
 
 	result := db.Create(&account)
 
@@ -39,7 +39,7 @@ func Register(username string, password string, res *response.Response) (err err
 
 func Login(username string, password string, res *response.Response) (err error) {
 
-	var account user.Account
+	var account model.Account
 	result := db.Where("username=?", username).First(&account)
 	res.UserId = account.ID
 
@@ -59,7 +59,7 @@ func Login(username string, password string, res *response.Response) (err error)
 }
 
 func GetUserInfo(id string, info *response.UserInfo) (err error) {
-	var account user.Account
+	var account model.Account
 	result := db.Where("id=?", id).First(&account)
 	if result.Error != nil {
 		log.Errorf(result.Error)

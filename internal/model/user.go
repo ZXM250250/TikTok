@@ -1,4 +1,4 @@
-package user
+package model
 
 import (
 	"TikTok/internal/dao"
@@ -17,7 +17,7 @@ type Account struct {
 }
 
 func init() {
-	err := dao.GetDB().AutoMigrate(&Account{})
+	err := dao.GetDB().AutoMigrate(&Account{}, &Video{})
 	if err != nil {
 		log.Errorf("建表失败错误", err)
 		return
