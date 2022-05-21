@@ -5,7 +5,7 @@ import user "TikTok/internal/model"
 type Response struct {
 	StatusCode uint   `json:"status_code"`
 	StatusMsg  string `json:"status_msg"`
-	UserId     uint   `json:"user_id"`
+	UserId     uint64 `json:"user_id"`
 	Token      string `json:"token"`
 }
 

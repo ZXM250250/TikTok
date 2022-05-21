@@ -7,11 +7,11 @@ import (
 )
 
 type Account struct {
-	ID                 uint   `gorm:"primary_key;AUTO_INCREMENT"`
+	ID                 uint64 `gorm:"primary_key;AUTO_INCREMENT"`
 	Username           string `gorm:"unique" json:"name"`
 	Password           string `json:"-"`
-	FollowCount        uint   `json:"follow_count"`
-	FollowerCount      uint   `json:"follower_count"`
+	FollowCount        uint64 `json:"follow_count"`
+	FollowerCount      uint64 `json:"follower_count"`
 	IsFollow           bool   `json:"is_follow"`
 	jwt.StandardClaims `gorm:"-" json:"-"`
 }

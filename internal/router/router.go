@@ -17,7 +17,7 @@ func InitRouter(r *gin.Engine) {
 	{
 		group.GET("/user/", controllers.GetUserInfo)
 		group.POST("/publish/action/", controllers.Publish)
-
+		group.GET("publish/list/", controllers.PublishList)
 	}
 
 }
