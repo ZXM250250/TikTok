@@ -8,6 +8,7 @@ import (
 func main() {
 
 	r := gin.Default()
+	r.Static("/assets", "assets")
 	router.InitRouter(r)
 	r.Run()
 

@@ -14,7 +14,7 @@ import (
 const BaseUrl = "E:/Projects/Golang/TikTok/assets/"
 const Video = "/video/"
 const Cover = "/cover/"
-const BaseIp = "192.168.4.72"
+const BaseIp = "192.168.4.72:8080"
 
 func Publish(c *gin.Context) {
 	account, _ := c.Get("account")
